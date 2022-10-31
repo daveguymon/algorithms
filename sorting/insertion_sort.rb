@@ -1,5 +1,3 @@
-# collection = [4,2,6,7,1]
-
 def insertion_sort(collection)
   (1...collection.count).each do |index|
     value_to_insert = collection[index]
