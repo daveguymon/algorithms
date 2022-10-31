@@ -1,18 +1,16 @@
+# collection = [4,2,6,7,1]
+
 def insertion_sort(collection)
-  (collection.count - 1).times do
-    index_of_item_to_sort = 1
+  (1...collection.count).each do |index|
+    value_to_insert = collection[index]
+    insertion_point = index
 
-    while index_of_item_to_sort <= collection.count - 1 do
-      if collection[index_of_item_to_sort - 1] > collection[index_of_item_to_sort]
-        insertion_index = index_of_item_to_sort - 1
-        greater_item = collection[insertion_index]
-
-        collection[insertion_index] = collection[index_of_item_to_sort]
-        collection[index_of_item_to_sort] = greater_item
-      end
-
-      index_of_item_to_sort += 1
+    while insertion_point > 0 && value_to_insert < collection[insertion_point - 1] do
+      collection[insertion_point] = collection[insertion_point - 1]
+      insertion_point -= 1
     end
+
+    collection[insertion_point] = value_to_insert
   end
 
   collection
