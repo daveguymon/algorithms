@@ -1,5 +1,9 @@
 def euclids_algorithm(num1, num2)
   remainder = num1 % num2
 
-  remainder.zero? ? num2 : euclids_algorithm(num2, remainder)
+  if remainder.zero?
+    return num2
+  else
+    return euclids_algorithm(num2, remainder)
+  end
 end
